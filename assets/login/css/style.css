@@ -1,0 +1,31 @@
+body{
+    background-color: #f0f0f0;
+}
+
+.h-login{
+    font-size: 30px;
+    color:rgb(80, 131, 177);
+}
+
+.card-header{
+    background-color: transparent;
+    border: none;
+}
+
+.login-c{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+p{
+    padding-bottom: 3px;
+}
+
+.btn-lg{
+    width: 100px;
+    padding: 3px;
+    background-color: rgb(80, 131, 177);
+}
+
+.form-group{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
