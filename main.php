@@ -44,6 +44,24 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
                     case 'user-edit':
                         include 'pages/user/edit.php';
                         break;
+                    case 'satuan':
+                        include 'pages/satuan/index.php';
+                        break;
+                    case 'satuan-create':
+                        include 'pages/satuan/create.php';
+                        break;
+                    case 'satuan-edit':
+                        include 'pages/satuan/edit.php';
+                        break;
+                    case 'customer':
+                        include 'pages/customer/index.php';
+                        break;
+                    case 'customer-create':
+                        include 'pages/customer/create.php';
+                        break;
+                    case 'customer-edit':
+                        include 'pages/customer/edit.php';
+                        break;
                     case 'profile':
                         include 'pages/profile.php';
                         break;
