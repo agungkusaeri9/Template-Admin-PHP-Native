@@ -80,12 +80,6 @@ if (isset($_POST['login'])) {
                 </form>
               </div>
             </div>
-            <!-- <div class="mt-5 text-muted text-center">
-              Don't have an account? <a href="auth-register.html">Create One</a>
-            </div> -->
-            <div class="simple-footer">
-              Copyright &copy; Stisla 2018
-            </div>
           </div>
         </div>
       </div>

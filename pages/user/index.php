@@ -1,7 +1,7 @@
 <?php
 
 require_once 'function/models/user.php';
-
+is_admin();
 $items = get();
 if (isset($_POST['delete'])) {
     $delete = deleteData($_POST['id_user']);

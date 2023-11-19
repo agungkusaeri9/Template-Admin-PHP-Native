@@ -5,11 +5,11 @@ function is_admin()
 {
     // cek admin atau tidak
     if ($_SESSION['level'] !== 'admin') {
-      redirectUrl(BASE_URL . '/warga.php?page=dashboard');
+        redirectUrl(BASE_URL . '/warga.php?page=dashboard');
     }
 }
 
-function is_warga()
+function is_kasir()
 {
     // cek warga atau tidak
     if ($_SESSION['level'] !== 'warga') {
@@ -24,59 +24,13 @@ function is_login()
     }
 }
 
-function getMonthName($monthNumber)
+function format_rupiah($angka)
 {
-    switch ($monthNumber) {
-        case 1:
-            return 'Januari';
-        case 2:
-            return 'Februari';
-        case 3:
-            return 'Maret';
-        case 4:
-            return 'April';
-        case 5:
-            return 'Mei';
-        case 6:
-            return 'Juni';
-        case 7:
-            return 'Juli';
-        case 8:
-            return 'Augustus';
-        case 9:
-            return 'September';
-        case 10:
-            return 'Oktober';
-        case 11:
-            return 'November';
-        case 12:
-            return 'Desember';
-        default:
-            return 'Invalid month number';
-    }
-}
-
-function getMonth()
-{
-    $bulan = array(
-        1 => "Januari",
-        2 => "Februari",
-        3 => "Maret",
-        4 => "April",
-        5 => "Mei",
-        6 => "Juni",
-        7 => "Juli",
-        8 => "Agustus",
-        9 => "September",
-        10 => "Oktober",
-        11 => "November",
-        12 => "Desember"
-    );
-
-    return $bulan;
+    $rupiah = $angka ? "Rp " . number_format($angka, 0, ',', '.') : $angka = 0;
+    return $rupiah;
 }
 
 function redirectUrl($url)
 {
-    echo '<script>window.location.href = "'.$url.'";</script>';
+    echo '<script>window.location.href = "' . $url . '";</script>';
 }

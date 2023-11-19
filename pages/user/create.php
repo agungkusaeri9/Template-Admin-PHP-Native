@@ -1,8 +1,7 @@
 <?php
 
 require_once 'function/models/user.php';
-$data_komplek = getKomplek();
-
+is_admin();
 if (isset($_POST['tambah'])) {
     validasiTambah($_POST);
     $tambah = tambahData($_POST);
@@ -50,6 +49,7 @@ if (isset($_POST['tambah'])) {
                                 <select name="level" id="level" class="form-control" required>
                                     <option value="">Pilih Level</option>
                                     <option value="admin">Admin</option>
+                                    <option value="kasir">Kasir</option>
                                 </select>
                             </div>
                             <div class="form-group">

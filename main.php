@@ -4,7 +4,6 @@ include 'config/config.php';
 include 'config/koneksi.php';
 include 'function/helper.php';
 is_login();
-is_admin();
 
 
 $page = isset($_GET['page']) ? $_GET['page'] : '';
@@ -61,6 +60,14 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
                         break;
                     case 'customer-edit':
                         include 'pages/customer/edit.php';
+                    case 'produk':
+                        include 'pages/produk/index.php';
+                        break;
+                    case 'produk-create':
+                        include 'pages/produk/create.php';
+                        break;
+                    case 'produk-edit':
+                        include 'pages/produk/edit.php';
                         break;
                     case 'profile':
                         include 'pages/profile.php';
@@ -73,7 +80,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
             </div>
             <footer class="main-footer">
                 <div class="text-center">
-                    &copy; Copyright 2023 By Agung Kusaeri
+                    &copy; Copyright 2023 By Nadia
                 </div>
                 <div class="footer-right">
 

@@ -11,12 +11,17 @@
                                 <span>Dashboard</span>
                         </a>
                 <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_URL . '/main.php?page=satuan' ?>"><i class="fas fa-folder"></i>
+                        <a class="nav-link" href="<?= BASE_URL . '/main.php?page=satuan' ?>"><i class="fas fa-balance-scale"></i>
                                 <span>Satuan</span>
                         </a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_URL . '/main.php?page=customer' ?>"><i class="fas fa-folder"></i>
+                        <a class="nav-link" href="<?= BASE_URL . '/main.php?page=produk' ?>"><i class="fas fa-box"></i>
+                                <span>Produk</span>
+                        </a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="<?= BASE_URL . '/main.php?page=customer' ?>"><i class="fas fa-user"></i>
                                 <span>Customer</span>
                         </a>
                 </li>

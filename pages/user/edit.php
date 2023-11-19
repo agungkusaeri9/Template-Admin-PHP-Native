@@ -1,7 +1,7 @@
 <?php
 
 require_once 'function/models/user.php';
-
+is_admin();
 $id_user = $_GET['id_user'];
 
 $item = getById($id_user);
@@ -53,7 +53,8 @@ if (isset($_POST['update'])) {
                                 <label for="level">Level</label>
                                 <select name="level" id="level" class="form-control" required>
                                     <option value="">Pilih Level</option>
-                                    <option <?php if($item['level'] === 'admin') : ?> selected <?php endif ?> value="admin">Admin</option>
+                                    <option <?php if ($item['level'] === 'admin') : ?> selected <?php endif ?> value="admin">Admin</option>
+                                    <option <?php if ($item['level'] === 'kasir') : ?> selected <?php endif ?> value="kasir">Kasir</option>
                                 </select>
                             </div>
                             <div class="form-group">
