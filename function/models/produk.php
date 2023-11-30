@@ -14,6 +14,19 @@ function get()
     return $data;
 }
 
+function getProduk()
+{
+    global $koneksi;
+    $items = $koneksi->query("SELECT * FROM produk INNER JOIN satuan ON produk.id_satuan = satuan.id_satuan");
+    $data = [];
+    while ($row = $items->fetch_assoc()) {
+        $data[] = $row;
+    }
+
+    return $data;
+}
+
+
 function getSatuan()
 {
     global $koneksi;
@@ -90,9 +103,9 @@ function getKodeBaru()
         $angkaKodeTerakhir = intval(substr($kodeTerakhir, 3));
         $angkaBaru = $angkaKodeTerakhir + 1;
         $angkaFormatBaru = sprintf('%03d', $angkaBaru);
-        $kodeBaru = 'BRG' . $angkaFormatBaru;
+        $kodeBaru = 'PRD' . $angkaFormatBaru;
     } else {
-        $kodeBaru = 'BRG001';
+        $kodeBaru = 'PRD001';
     }
 
     return $kodeBaru;
@@ -163,7 +176,7 @@ function deleteData($id_produk)
 function validasiTambah($post)
 {
 
-    if (!$post['nama_produk'] || !$post['harga'] || !$post['id_satuan'] || !$post['deskripsi']) {
+    if (!$post['nama_produk'] || !$post['harga'] || !$post['id_satuan']) {
 
         redirectUrl(BASE_URL . '/main.php?page=produk-create&status=error&message=Inputan tidak boleh kosong.');
         exit;
@@ -173,7 +186,7 @@ function validasiTambah($post)
 
 function validasiEdit($post)
 {
-    if (!$post['nama_produk'] || !$post['harga'] || !$post['id_satuan'] || !$post['deskripsi']) {
+    if (!$post['nama_produk'] || !$post['harga'] || !$post['id_satuan']) {
 
         redirectUrl(BASE_URL . '/main.php?page=produk-create&status=error&message=Inputan tidak boleh kosong.');
         exit;

@@ -45,14 +45,6 @@ if (isset($_POST['tambah'])) {
                                 <input type="email" class="form-control" name="email" value="" id="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="level">Level</label>
-                                <select name="level" id="level" class="form-control" required>
-                                    <option value="">Pilih Level</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="kasir">Kasir</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" name="password" value="" id="password" required>
                             </div>

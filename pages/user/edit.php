@@ -50,14 +50,6 @@ if (isset($_POST['update'])) {
                                 <input type="email" class="form-control" name="email" value="<?= $item['email'] ?>" id="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="level">Level</label>
-                                <select name="level" id="level" class="form-control" required>
-                                    <option value="">Pilih Level</option>
-                                    <option <?php if ($item['level'] === 'admin') : ?> selected <?php endif ?> value="admin">Admin</option>
-                                    <option <?php if ($item['level'] === 'kasir') : ?> selected <?php endif ?> value="kasir">Kasir</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" name="password" value="" id="password">
                             </div>

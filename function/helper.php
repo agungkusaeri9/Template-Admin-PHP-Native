@@ -26,11 +26,29 @@ function is_login()
 
 function format_rupiah($angka)
 {
-    $rupiah = $angka ? "Rp " . number_format($angka, 0, ',', '.') : $angka = 0;
+    $rupiah = $angka ? "Rp " . number_format($angka, 0, ',', '.') :  "Rp 0";
     return $rupiah;
 }
 
 function redirectUrl($url)
 {
     echo '<script>window.location.href = "' . $url . '";</script>';
+}
+
+function format_tanggal($timestamp, $format = 'Y-m-d H:i:s')
+{
+    // Konversi string ke timestamp jika $timestamp bukan bertipe int
+    if (!is_int($timestamp)) {
+        $timestamp = strtotime($timestamp);
+    }
+
+    // Pastikan konversi berhasil
+    if ($timestamp === false) {
+        return "Format timestamp tidak valid";
+    }
+
+    // Format timestamp
+    $formattedTime = date($format, $timestamp);
+
+    return $formattedTime;
 }

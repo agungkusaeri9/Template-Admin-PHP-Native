@@ -9,9 +9,6 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-title"></div>
-                <a href="<?= BASE_URL . '/main.php?page=profile' ?>" class="dropdown-item has-icon">
-                    <i class="far fa-user"></i> Profile
-                </a>
                 <div class="dropdown-divider"></div>
                 <a href="<?= BASE_URL . '/logout.php' ?>" onclick="document.getElementById('formLogout').submit();" class="dropdown-item has-icon text-danger">
                     <i class="fas fa-sign-out-alt"></i> Logout

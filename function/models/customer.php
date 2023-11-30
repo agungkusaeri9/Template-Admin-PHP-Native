@@ -66,9 +66,9 @@ function validasiTambah($post)
         redirectUrl(BASE_URL . '/main.php?page=customer-create&status=error&message=customer sudah ada di database.');
         exit;
     } else {
-        if (!$post['nama'] || !$post['nomor_hp'] || !$post['jenis_kelamin'] || !$post['alamat']) {
+        if (!$post['nama']) {
 
-            redirectUrl(BASE_URL . '/main.php?page=customer-create&status=error&message=Nama, Nomor HP, Jenis kelamin, dan Alamat tidak boleh kosong.');
+            redirectUrl(BASE_URL . '/main.php?page=customer-create&status=error&message=Nama Customer tidak boleh kosong.');
             exit;
         }
     }
@@ -85,9 +85,9 @@ function validasiEdit($post)
         redirectUrl(BASE_URL . '/main.php?page=customer-create&status=error&message=Nomor HP sudah ada di database.');
         exit;
     } else {
-        if (!$post['nama'] || !$post['nomor_hp'] || !$post['jenis_kelamin'] || !$post['alamat']) {
+        if (!$post['nama']) {
 
-            redirectUrl(BASE_URL . '/main.php?page=customer-create&status=error&message=Nama, Nomor HP, Jenis kelamin, dan Alamat tidak boleh kosong.');
+            redirectUrl(BASE_URL . '/main.php?page=customer-create&status=error&message=Nama Customer tidak boleh kosong.');
             exit;
         }
     }

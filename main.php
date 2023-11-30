@@ -69,8 +69,23 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
                     case 'produk-edit':
                         include 'pages/produk/edit.php';
                         break;
-                    case 'profile':
-                        include 'pages/profile.php';
+                    case 'transaksi':
+                        include 'pages/transaksi/index.php';
+                        break;
+                    case 'transaksi-create':
+                        include 'pages/transaksi/create.php';
+                        break;
+                    case 'transaksi-edit':
+                        include 'pages/transaksi/edit.php';
+                        break;
+                    case 'transaksi-detail':
+                        include 'pages/transaksi/detail.php';
+                        break;
+                    case 'laporan-transaksi':
+                        include 'pages/laporan/transaksi.php';
+                        break;
+                    case 'laporan-transaksi-print':
+                        include 'pages/laporan/transaksi-print.php';
                         break;
                     default:
                         include 'pages/dashboard.php';
@@ -80,7 +95,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
             </div>
             <footer class="main-footer">
                 <div class="text-center">
-                    &copy; Copyright 2023 By Nadia
+                    &copy; Copyright 2023 Nadia
                 </div>
                 <div class="footer-right">
 
@@ -102,12 +117,17 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
     <script src="<?= BASE_URL ?>/assets/js/scripts.js"></script>
     <script src="<?= BASE_URL ?>/assets/js/custom.js"></script>
 
+    <script src="<?= BASE_URL ?>/assets/plugin/select2/js/select2.min.js"></script>
+
     <script src="<?= BASE_URL . '/assets/datatables/jquery.dataTables.min.js' ?>"></script>
     <script src="<?= BASE_URL . '/assets/datatables-bs4/js/dataTables.bootstrap4.min.js' ?>"></script>
     <script src="<?= BASE_URL . '/assets/sweetalert2/sweetalert2.min.js' ?>"></script>
     <script>
         $(function() {
             $('#dTable').DataTable();
+            $('.select2').select2({
+
+            });
         })
     </script>
     <?php if (isset($_GET['status'])) : ?>

@@ -20,7 +20,7 @@ function tambahData($post)
     // cek apakah admin atau warga
     $nama = htmlspecialchars($post['nama']);
     $email = htmlspecialchars($post['email']);
-    $level = htmlspecialchars($post['level']);
+    $level = 'admin';
     $password = password_hash($post['password'], PASSWORD_BCRYPT);
     $insertId = $koneksi->query("INSERT INTO `user` (`id_user`, `nama`, `email`,`level`, `password`) VALUES (NULL, '$nama','$email','$level','$password')");
 
@@ -41,7 +41,7 @@ function updateData($post)
     // cek apakah admin atau warga
     $nama = htmlspecialchars($post['nama']);
     $email = htmlspecialchars($post['email']);
-    $level = htmlspecialchars($post['level']);
+    $level = 'admin';
 
     // update user
     if ($post['password']) {
@@ -60,39 +60,6 @@ function deleteData($id_user)
     $item = $koneksi->query("DELETE FROM user WHERE id_user=$id_user");
 }
 
-function updateProfile($post)
-{
-    global $koneksi;
-
-    // cek apakah admin atau warga
-    $nama = htmlspecialchars($post['nama']);
-    $email = htmlspecialchars($post['email']);
-
-    // update user
-    if ($post['password']) {
-
-        $pw_hash = password_hash($post['password'], PASSWORD_BCRYPT);
-        $passwordUpdate = ",`password` = " . "'" . $pw_hash . "'";
-    } else {
-        $passwordUpdate = NULL;
-    }
-    $user = $koneksi->query("UPDATE `user` SET `nama` = '$nama', `email` = '$email' $passwordUpdate WHERE `user`.`id_user` = $_SESSION[id_user]");
-
-    if ($user) {
-        // hapus session
-        unset($_SESSION['nama']);
-        unset($_SESSION['email']);
-
-        // buat session baru
-        $_SESSION['nama'] = $nama;
-        $_SESSION['email'] = $email;
-
-        return true;
-    } else {
-        return false;
-    }
-}
-
 
 function validasiTambah($post)
 {
@@ -104,7 +71,7 @@ function validasiTambah($post)
         redirectUrl(BASE_URL . '/main.php?page=user-create&status=error&message=User dengan email tersebut sudah terdaftar.');
         exit;
     } else {
-        if (!$post['nama'] || !$post['email'] || !$post['level'] || !$post['password']) {
+        if (!$post['nama'] || !$post['email'] || !$post['password']) {
 
             redirectUrl(BASE_URL . '/main.php?page=user-create&status=error&message=Nama, Email, Level dan Password tidak boleh kosong.');
             exit;
@@ -123,7 +90,7 @@ function validasiEdit($post)
         redirectUrl(BASE_URL . '/main.php?page=user-edit&id_user=' . $post['id_user'] . '&status=error&message=User dengan email tersebut sudah terdaftar.');
         exit;
     } else {
-        if (!$post['nama'] || !$post['email'] || !$post['level']) {
+        if (!$post['nama'] || !$post['email']) {
 
             redirectUrl(BASE_URL . '/main.php?page=user-edit&id_user=' . $post['id_user'] . '&status=error&message=Nama, Email, Level dan Password tidak boleh kosong.');
             exit;

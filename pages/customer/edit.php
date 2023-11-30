@@ -47,11 +47,11 @@ if (isset($_POST['update'])) {
                             </div>
                             <div class="form-group">
                                 <label for="nomor_hp">Nomor HP</label>
-                                <input type="text" class="form-control" name="nomor_hp" value="<?= $item['nomor_hp'] ?>" id="nomor_hp" required>
+                                <input type="text" class="form-control" name="nomor_hp" value="<?= $item['nomor_hp'] ?>" id="nomor_hp">
                             </div>
                             <div class="form-group">
                                 <label for="jenis_kelamin">Jenis Kelamin</label>
-                                <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
+                                <select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
                                     <option value="">Pilih Jenis Kelamin</option>
                                     <option <?php if ($item['jenis_kelamin'] === 'L') : ?> selected <?php endif; ?> value="L">Laki-laki</option>
                                     <option <?php if ($item['jenis_kelamin'] === 'P') : ?> selected <?php endif; ?> value="P">Perempuan</option>

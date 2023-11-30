@@ -41,11 +41,11 @@ if (isset($_POST['tambah'])) {
                             </div>
                             <div class="form-group">
                                 <label for="nomor_hp">Nomor HP</label>
-                                <input type="text" class="form-control" name="nomor_hp" value="" id="nomor_hp" required>
+                                <input type="text" class="form-control" name="nomor_hp" value="" id="nomor_hp">
                             </div>
                             <div class="form-group">
                                 <label for="jenis_kelamin">Jenis Kelamin</label>
-                                <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
+                                <select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
                                     <option value="">Pilih Jenis Kelamin</option>
                                     <option value="L">Laki-laki</option>
                                     <option value="P">Perempuan</option>
