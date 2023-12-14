@@ -7,7 +7,6 @@ $data_customer = getCustomer();
 $kode_baru = generateNewTransactionCode();
 
 if (isset($_POST['tambah'])) {
-    validasiTambah($_POST);
     $tambah = tambahData($_POST);
     if ($tambah) {
         redirectUrl(BASE_URL . '/main.php?page=transaksi&status=success&message=transaksi berhasil ditambahkan!');

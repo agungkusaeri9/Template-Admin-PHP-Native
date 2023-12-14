@@ -3,7 +3,6 @@
 require_once 'function/models/satuan.php';
 
 if (isset($_POST['tambah'])) {
-    validasiTambah($_POST);
     $tambah = tambahData($_POST);
     if ($tambah) {
         redirectUrl(BASE_URL . '/main.php?page=satuan&status=success&message=satuan berhasil ditambahkan!');

@@ -5,7 +5,6 @@ require_once 'function/models/produk.php';
 $data_satuan = getSatuan();
 
 if (isset($_POST['tambah'])) {
-    validasiTambah($_POST);
     $tambah = tambahData($_POST);
     if ($tambah) {
         redirectUrl(BASE_URL . '/main.php?page=produk&status=success&message=produk berhasil ditambahkan!');

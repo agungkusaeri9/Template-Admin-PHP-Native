@@ -2,7 +2,6 @@
 
 require_once 'function/models/customer.php';
 if (isset($_POST['tambah'])) {
-    validasiTambah($_POST);
     $tambah = tambahData($_POST);
     if ($tambah) {
         redirectUrl(BASE_URL . '/main.php?page=customer&status=success&message=customer berhasil ditambahkan!');

@@ -10,7 +10,6 @@ if (!$item)
     redirectUrl(BASE_URL . '/main.php?page=produk');
 
 if (isset($_POST['update'])) {
-    validasiEdit($_POST);
     $update = updateData($_POST);
     if ($update) {
         redirectUrl(BASE_URL . '/main.php?page=produk&status=success&message=produk berhasil diupdate.');

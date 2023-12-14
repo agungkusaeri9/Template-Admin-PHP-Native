@@ -3,7 +3,6 @@
 require_once 'function/models/user.php';
 is_admin();
 if (isset($_POST['tambah'])) {
-    validasiTambah($_POST);
     $tambah = tambahData($_POST);
     if ($tambah) {
         redirectUrl(BASE_URL . '/main.php?page=user&status=success&message=User berhasil ditambahkan!');
